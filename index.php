@@ -41,7 +41,7 @@
 					
 					if($debug) echo "<code>Executing: $wget_cmd<br></code>"; // Echo command to be exec
 					
-					exec($wget_cmd); // MONEY SHOT
+					execbg($wget_cmd); // MONEY SHOT
 					
 					if($chmod) exec("chmod -R $chmod ".escapeshellarg($presets[$r_download_preset]['dir']));
 					
