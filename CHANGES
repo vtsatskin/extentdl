@@ -1,0 +1,4 @@
+0.1.1:
+	* script no longer waits for wget to finish, useful for large downloads (hopefully works in both *nix and windows)
+	* $preset_default_dir now accepts a user specified path, "1" will still cause it to use script path
+	* Various small tweaks and fixes

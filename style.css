@@ -25,7 +25,7 @@ input[type=text] {
 	padding: 3px;
 	color: #666;
 }
-#edit_dir { width: 200px; }
+#edit_dir, #download_url { width: 200px; }
 
 .error {
 	background: #845C5C;

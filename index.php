@@ -17,17 +17,11 @@
 	<?php
 		require 'functions/error.php';
 		require 'functions/config.php';
+		require 'functions/wget.php';
 		
 		// Check if no errors
 		if(!error_spew()){
-			//Parsing config file
-			$file = file($config, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-			foreach($file as $preset){
-				$preset = explode("|", $preset);
-				$presets[$preset[0]] = array("dir" => $preset[1], "lastdl" => $preset[2]);
-			}
-			unset($file);
-			if(!config_empty()) ksort($presets); // Sort presets alphabetically
+			parse_config();
 			
 			// Import all submitted request vars
 			import_request_variables("gp", "r_");
@@ -88,6 +82,10 @@
 			} // end delete preset
 			
 			error_spew();
+			
+			if($preset_default_dir){
+				if($preset_default_dir == "1") $preset_default_dir = dirname($_SERVER['SCRIPT_FILENAME']);
+			}
 			?>
 				<form action="index.php" method="post" accept-charset="utf-8">
 					<fieldset>
@@ -101,7 +99,7 @@
 							}
 						?>
 						</select>
-						<label for="download_url">URL:</label><input type="text" name="download_url" value="" id="download_url">
+						<label for="download_url">URL: </label><input type="text" name="download_url" value="" id="download_url">
 						<input type="submit" value="Download" name="download">
 						<?php } else echo "<strong>No presets exist</strong>" ?>
 					</fieldset>
@@ -110,7 +108,7 @@
 					<fieldset>
 						<legend>Add/Edit Preset</legend>
 						<label for="edit_name">Name: </label><input type="text" name="edit_name" value="" id="edit_name">	
-						<label for="edit_dir">Directory: </label><input type="text" name="edit_dir" value="<?php if($preset_default_dir) echo dirname($_SERVER['SCRIPT_FILENAME']); ?>" id="edit_dir">						
+						<label for="edit_dir">Directory: </label><input type="text" name="edit_dir" value="<?php echo $preset_default_dir; ?>" id="edit_dir">						
 						<input type="submit" value="Add" name="edit">
 					</fieldset>
 				</form>
