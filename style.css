@@ -1,0 +1,44 @@
+body {
+	background: #1E1E2A;
+	color: #FFF;
+	font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #CCC;
+}
+
+fieldset {
+	background: #333;
+	border: 1px solid #666;
+}
+legend {
+	font-size: 20px;
+	color: #FFF;
+	font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+}
+
+label {
+	font-weight: bold;
+}
+input[type=text] {
+	border: #CCC 1px solid;
+	background: #CCC;
+	padding: 3px;
+	color: #666;
+}
+#edit_dir { width: 200px; }
+
+.error {
+	background: #845C5C;
+	border: 1px solid #BEA2A2;
+	padding: 10px;
+	color: #FFF;
+	font-weight: bold;
+}
+.success {
+	background: #637552;
+	border: 1px solid #A2B493;
+	padding: 10px;
+	color: #FFF;
+}
+a { text-decoration: none; color: #FFF; font-weight: bold; }
+th { text-align: left; }

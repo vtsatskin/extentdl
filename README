@@ -1,0 +1,28 @@
+extentdl, http://github.com/valspy/extentdl
+by: valspy
+
+Simple (for now?) PHP wget assistant
+
+Outline:
+	* Stores config data in text file
+	* Features presets for easier wget usage
+	* Easy to use!
+
+Installation:
+	1) Put files somewhere on file server
+	2) Be sure that web server has read and write access to files (will alert if not)
+	3) Recommended: Edit config.php (located in root of script) with custom settings
+	
+Legal/Copyright:
+	extentdl is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    extentdl is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
