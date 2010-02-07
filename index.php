@@ -31,12 +31,6 @@
 			if($r_download){
 				if(empty($r_download_preset) || empty($r_download_url)) error_spool("Please fill in all fields");
 				else {
-					// Debugging
-					if($debug) {
-						$debug_file = "output.temp.txt";
-						$output = "-o $debug_file";
-					}
-					
 					$wget_cmd = "$wget_path $output $wget_flags -P ".escapeshellarg($presets[$r_download_preset]['dir'])." ".escapeshellarg($r_download_url); // command to be executed
 					
 					if($debug) echo "<code>Executing: $wget_cmd<br></code>"; // Echo command to be exec
@@ -44,16 +38,6 @@
 					execbg($wget_cmd); // MONEY SHOT
 					
 					if($chmod) exec("chmod -R $chmod ".escapeshellarg($presets[$r_download_preset]['dir']));
-					
-					// More debugging
-					if($debug){
-						// outputs all of wget output
-						$handle = fopen($debug_file, "r");
-						$contents = fread($handle, filesize($debug_file));
-						echo "<code>".nl2br($contents)."</code>";
-						fclose($handle);
-						unlink($debug_file);
-					}
 					
 					// Record last download in config
 					$presets[$r_download_preset]['lastdl'] = $r_download_url;

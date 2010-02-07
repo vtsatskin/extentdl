@@ -1,3 +1,8 @@
+0.1.2:
+	* Properly executes commands in bg for *nix, unsure about windows.
+	* Debug can no longer output wget commands due to background processing. It's either long ass waits or debug logs. I will later put an option for old method of processing.
+	* Various code cleaned up.
+
 0.1.1:
 	* script no longer waits for wget to finish, useful for large downloads (hopefully works in both *nix and windows)
 	* $preset_default_dir now accepts a user specified path, "1" will still cause it to use script path
